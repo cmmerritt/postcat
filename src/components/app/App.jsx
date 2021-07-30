@@ -1,5 +1,8 @@
 import React from 'react';
+import PostPersonContainer from '../../containers/PostPersonContainer';
 
 export default function App() {
-  return <h1>Hello World</h1>;
+  return <>
+    <PostPersonContainer />
+  </>;
 }
