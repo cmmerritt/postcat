@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import Header from '../components/Header';
-import SidebarItem from '../components/SidebarItem';
+import Sidebar from '../components/SidebarItem';
 
 export default class PostPersonContainer extends Component {
   render() {
     return (
       <>
         <header><Header /></header>
-        <p><SidebarItem /></p>
+        <p><Sidebar /></p>
       </>
     );
   }
