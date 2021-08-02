@@ -15,11 +15,10 @@ export default class PostCatContainer extends Component {
     urlText: '',
     reqText: '',
     method: '',
-    response: ''
+    response: []
   }
 
   async componentDidMount() {
-    this.setState({ loading: false });
   }
 
   handleSubmit = async (e) => {
