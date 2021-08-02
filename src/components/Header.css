@@ -3,7 +3,7 @@
   src: url('../../public/assets/caty.ttf') format('ttf')
 }
 
-.header {
+header {
   background-color: wheat;
   color: black;
   display: flex;
@@ -13,6 +13,6 @@
   font-size: larger;
 }
 
-.image {
+img {
   height: 100px;
 }

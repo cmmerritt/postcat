@@ -5,6 +5,7 @@ import Header from '../components/Header';
 import ResponseDisplay from '../components/ResponseDisplay';
 import Sidebar from '../components/SidebarItem';
 import { fetchService } from '../services/fetchServices';
+import { setMethod, setUrl } from '../services/utils';
 import styles from './postCatContainer.css';
 
 export default class PostCatContainer extends Component {
@@ -22,19 +23,17 @@ export default class PostCatContainer extends Component {
   }
 
   handleSubmit = async (e) => {
-    e.preventDefault();
-
     const { urlText, method, reqText } = this.state;
+    e.preventDefault();
+    setMethod(method);
+    setUrl(urlText);
 
     const apiResponse = await fetchService(urlText, method, reqText);
-    console.log(apiResponse);
 
     this.setState({ 
       response: apiResponse, 
       method, 
       loading: false });
-
-    console.log(this.state);
   }
 
   handleChange = ({ target }) => {
@@ -48,7 +47,7 @@ export default class PostCatContainer extends Component {
       <article id="postcatContainer">
         <header><Header /></header>
         <section className={styles.bodySection}>
-          <section className={styles.sidebar}><Sidebar method={method} urlText={urlText}/></section>
+          <section className={styles.sidebar}><Sidebar method={this.state.method} urlText={this.state.urlText}/></section>
           <section className={styles.mainBody}>
             <section className={styles.fetcher}><Fetcher urlText={urlText} reqText={reqText} method={method} onChange={this.handleChange} onSubmit={this.handleSubmit}/></section>
             <section><ResponseDisplay response={response}/></section>
