@@ -1,13 +1,14 @@
 /* eslint-disable max-len */
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from './fetcher.css';
 
 const Fetcher = ({ urlText, method, reqText, onChange, onSubmit }) => {
-  return <div>
+  return <div className={styles.fetcher}>
     <form onSubmit={onSubmit}>
       {/* <label htmlFor="urlText"></label> */}
-      <input data-testid="urlText" id="urlText" placeholder="URL" type="text" name="urlText" value={urlText} onChange={onChange}/>
-      <div>
+      <input data-testid="urlText" className={styles.searchInput} id="urlText" placeholder="URL" type="text" name="urlText" value={urlText} onChange={onChange}/>
+      <div className={styles.radioButtons}>
         <input type="radio" id="get" name="method" value="GET" method={method} onChange={onChange}/>
         <label htmlFor="get">GET</label>
 
@@ -25,7 +26,7 @@ const Fetcher = ({ urlText, method, reqText, onChange, onSubmit }) => {
       </div>
 
       <div>
-        <button type="submit">Go!</button>
+        <button type="submit" className={styles.goButton}>Go!</button>
       </div>
     </form>
 

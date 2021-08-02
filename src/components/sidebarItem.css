@@ -1,0 +1,11 @@
+li {
+  background-color:darkseagreen;
+  color: white;
+}
+
+.sidebarItem {
+  display: block;
+  width: 100%;
+  border: 1px solid black;
+  word-break: break-all;
+}

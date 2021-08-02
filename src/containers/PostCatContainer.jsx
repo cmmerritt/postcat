@@ -5,6 +5,7 @@ import Header from '../components/Header';
 import ResponseDisplay from '../components/ResponseDisplay';
 import Sidebar from '../components/SidebarItem';
 import { fetchService } from '../services/fetchServices';
+import styles from './postCatContainer.css';
 
 export default class PostCatContainer extends Component {
 
@@ -44,12 +45,16 @@ export default class PostCatContainer extends Component {
     const { urlText, reqText, method, response } = this.state;
 
     return (
-      <>
+      <article id="postcatContainer">
         <header><Header /></header>
-        <section><Sidebar method={method} urlText={urlText}/></section>
-        <section><Fetcher urlText={urlText} reqText={reqText} method={method} onChange={this.handleChange} onSubmit={this.handleSubmit}/></section>
-        <section><ResponseDisplay response={response}/></section>
-      </>
+        <section className={styles.bodySection}>
+          <section className={styles.sidebar}><Sidebar method={method} urlText={urlText}/></section>
+          <section className={styles.mainBody}>
+            <section className={styles.fetcher}><Fetcher urlText={urlText} reqText={reqText} method={method} onChange={this.handleChange} onSubmit={this.handleSubmit}/></section>
+            <section><ResponseDisplay response={response}/></section>
+          </section>
+        </section>
+      </article>
     );
   }
 }

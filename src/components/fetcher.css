@@ -1,0 +1,42 @@
+input[type="radio"] {
+  display: none;
+}
+
+/* .fetcher {
+  display: grid;
+  background-color: wheat;
+}
+
+.searchInput {
+  height: 30px;
+  font-size: 12px
+}
+*/
+
+.goButton {
+  margin-bottom: 1em;
+} 
+
+label {
+  background-color:tomato;
+  padding: 5px 15px;
+  margin-right: 5px;
+  font-size: 15px;
+  width: 15px;
+  height: 15px;
+  font-family:monospace;
+  border: 1px solid black;
+}
+
+input[type="radio"]:checked + label {
+  background-color:rebeccapurple;
+  color: white;
+}
+
+.radioButtons {
+  margin: 1em 0 1em 0;
+}
+
+textarea {
+  height: 50px
+}
