@@ -1,10 +1,16 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const SidebarItem = () => {
+const SidebarItem = ({ method, urlText }) => {
   return <>
-    <p>GET</p>
-    <p>https://futuramaapi.herokuapp.com/api/quotes</p>
+    <h4>{method}</h4>
+    <p>{urlText}</p>
   </>;
+};
+
+SidebarItem.propTypes = {
+  method: PropTypes.string.isRequired, 
+  urlText: PropTypes.string.isRequired
 };
 
 export default SidebarItem;
