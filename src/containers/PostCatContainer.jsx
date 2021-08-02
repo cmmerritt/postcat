@@ -6,7 +6,7 @@ import ResponseDisplay from '../components/ResponseDisplay';
 import Sidebar from '../components/SidebarItem';
 import { fetchService } from '../services/fetchServices';
 
-export default class PostPersonContainer extends Component {
+export default class PostCatContainer extends Component {
 
   state = {
     loading: true,
