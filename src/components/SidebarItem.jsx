@@ -1,18 +1,13 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import styles from './sidebarItem.css';
 
-const SidebarItem = ({ u, m }) => (
+const SidebarItem = ({ history }) => (
   <section className={styles.sidebarItem}>
-    <h4>{m}</h4>
-    <span>{u}</span>
+    <h4>{history.method}</h4>
+    <span>{history.url}</span>
   </section>
+  console.log(history);
 );
-
-SidebarItem.propTypes = {
-  u: PropTypes.string.isRequired,
-  m: PropTypes.string.isRequired
-};
 
 export default SidebarItem;
 

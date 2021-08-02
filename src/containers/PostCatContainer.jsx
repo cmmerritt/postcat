@@ -14,7 +14,8 @@ export default class PostCatContainer extends Component {
     url: '',
     body: '',
     method: '',
-    response: { 'Hello': 'I am bored. Please make a fetch!' },
+    response: { 'Hello': 'I am a bored cat. Please make a fetch!' },
+    history: []
   }
 
   async componentDidMount() {
@@ -22,15 +23,13 @@ export default class PostCatContainer extends Component {
 
   handleSubmit = async (e) => {
     e.preventDefault();
-    const { url, method, body } = this.state;
-    setMethod(method);
-    setUrl(url);
-
+    const { url, method, body, history } = this.state;
     const apiResponse = await fetchService(url, method, body);
+    history.push({ url, method });
+    console.log(history);
 
     this.setState({ 
-      response: apiResponse, 
-      method
+      response: apiResponse
     });
   }
 
@@ -39,15 +38,15 @@ export default class PostCatContainer extends Component {
   }
 
   render() {
-    const { url, body, method, response } = this.state;
+    const { url, body, method, response, history } = this.state;
 
     return (
       <article id="postcatContainer">
         <header><Header /></header>
         <section className={styles.bodySection}>
-          <section className={styles.sidebar}><Sidebar /></section>
+          <section className={styles.sidebar}><Sidebar history={history} /></section>
           <section className={styles.mainBody}>
-            <section className={styles.fetcher}><Fetcher url={url} body={body} method={method} onChange={this.handleChange} /></section>
+            <section className={styles.fetcher}><Fetcher url={url} body={body} method={method} onChange={this.handleChange} onSubmit={this.handleSubmit} /></section>
             <section><ResponseDisplay response={response}/></section>
           </section>
         </section>
