@@ -7,23 +7,20 @@ const Fetcher = ({ urlText, method, reqText, onChange, onSubmit }) => {
     <form onSubmit={onSubmit}>
       {/* <label htmlFor="urlText"></label> */}
       <input data-testid="urlText" id="urlText" placeholder="URL" type="text" name="urlText" value={urlText} onChange={onChange}/>
-    </form>
-
-    <form>
       <div>
-        <input type="radio" id="get" name="methods" value="get" method={method} onChange={onChange}/>
+        <input type="radio" id="get" name="method" value="GET" method={method} onChange={onChange}/>
         <label htmlFor="get">GET</label>
 
-        <input type="radio" id="post" name="methods" value="post" method={method} onChange={onChange}/>
+        <input type="radio" id="post" name="method" value="POST" method={method} onChange={onChange}/>
         <label htmlFor="post">POST</label>
 
-        <input type="radio" id="put" name="methods" value="put" method={method} onChange={onChange}/>
+        <input type="radio" id="put" name="method" value="PUT" method={method} onChange={onChange}/>
         <label htmlFor="put">PUT</label>
 
-        <input type="radio" id="patch" name="methods" value="patch" method={method} onChange={onChange}/>
+        <input type="radio" id="patch" name="method" value="PATCH" method={method} onChange={onChange}/>
         <label htmlFor="patch">PATCH</label>
 
-        <input type="radio" id="delete" name="methods" value="delete" method={method} onChange={onChange}/>
+        <input type="radio" id="delete" name="method" value="DELETE" method={method} onChange={onChange}/>
         <label htmlFor="delete">DELETE</label>
       </div>
 
@@ -34,7 +31,7 @@ const Fetcher = ({ urlText, method, reqText, onChange, onSubmit }) => {
 
     <form>
       {/* <label htmlFor="reqText"></label> */}
-      <textarea data-testid="reqText" id="reqText" placeholder="Raw JSON Body" type="text" name="reqText" value={reqText} onChange={onChange} onSubmit={onSubmit}/>
+      <textarea data-testid="reqText" id="reqText" placeholder="Raw JSON Body" type="text" name="reqText" value={reqText} onChange={onChange}/>
     </form>
   </div>;
 };
@@ -42,9 +39,9 @@ const Fetcher = ({ urlText, method, reqText, onChange, onSubmit }) => {
 Fetcher.propTypes = {
   urlText: PropTypes.string.isRequired,
   method:  PropTypes.string.isRequired,
-  reqText: PropTypes.any.isRequired,
-  onChange: PropTypes.func.isRequired,
-  onSubmit: PropTypes.func.isRequired
+  reqText: PropTypes.any,
+  onChange: PropTypes.func,
+  onSubmit: PropTypes.func
 };
 
 export default Fetcher;

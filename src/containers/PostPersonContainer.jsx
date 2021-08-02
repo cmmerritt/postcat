@@ -9,25 +9,30 @@ import { fetchService } from '../services/fetchServices';
 export default class PostPersonContainer extends Component {
 
   state = {
+    loading: true,
     urlText: '',
     reqText: '',
-    method: ''
+    method: '',
+    resBody: ''
   }
 
-  componentDidMount() {
+  async componentDidMount() {
+    this.setState({ loading: false });
   }
 
-  handleSubmit = (e) => {
-    const { urlText, reqText, method } = this.state;
-
+  handleSubmit = async (e) => {
     e.preventDefault();
-    this.fetch();
+
+    const { urlText, method, reqText } = this.state;
+
+    const apiResponse = await fetchService(urlText, method, reqText);
+    console.log(apiResponse);
 
     this.setState({ 
-      urlText,
-      reqText,
-      method
-    });
+      resBody: apiResponse, 
+      method, 
+      loading: false });
+
     console.log(this.state);
   }
 
@@ -35,21 +40,16 @@ export default class PostPersonContainer extends Component {
     this.setState({ [target.name]: target.value });
   }
 
-  fetch = () => {
-    const { urlText, method, reqText } = this.state;
-    return fetchService(urlText, method, reqText)
-      .then(res => this.setState({ response: res }));
-  }
-
   render() {
-    const { urlText, reqText, method, response } = this.state;
+    const { urlText, reqText, method, resBody } = this.state;
+    console.log(resBody);
 
     return (
       <>
         <header><Header /></header>
         <section><Sidebar method={method} urlText={urlText}/></section>
         <section><Fetcher urlText={urlText} reqText={reqText} method={method} onChange={this.handleChange} onSubmit={this.handleSubmit}/></section>
-        <section><ResponseDisplay response={response}/></section>
+        <section><ResponseDisplay resBody={resBody}/></section>
       </>
     );
   }

@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const SidebarItem = ({ method, urlText }) => {
-  return <>
+const SidebarItem = ({ method, urlText }) => (
+  <section>
     <h4>{method}</h4>
-    <p>{urlText}</p>
-  </>;
-};
+    <span>{urlText}</span>
+  </section>
+);
 
 SidebarItem.propTypes = {
   method: PropTypes.string.isRequired, 

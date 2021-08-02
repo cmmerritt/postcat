@@ -1,14 +1,19 @@
-export const fetchService = (url, method, reqText) => {
+export const fetchService = async (url, method, reqText) => {
+  let res;
   if(method !== 'GET') {
-    return fetch(url, { 
+    res = await fetch(url, { 
       method,
       headers: {
         'Content-Type': 'application/json'
       },
-      reqText
-    })
-      .then(res => res.json());
+      reqText: JSON.stringify(reqText)
+    });
   } 
-  return fetch(url)
-    .then(res => res.json());
+  else {
+    res = await fetch(url, {
+      method
+    });
+  }
+  const json = await res.json();
+  return json;
 };
