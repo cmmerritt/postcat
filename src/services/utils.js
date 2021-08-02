@@ -5,6 +5,7 @@ export function getMethod() {
   const stringyMethod = localStorage.getItem(METHOD);
   if(!stringyMethod) return [];
   const parsedMethod = JSON.parse(stringyMethod);
+  console.log(parsedMethod);
   return parsedMethod;
 }
 

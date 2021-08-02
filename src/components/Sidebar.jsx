@@ -7,11 +7,15 @@ const Sidebar = () => {
   const method = getMethod();
   const url = getUrl();
 
+  console.log(method);
+  console.log(url);
+
   const sidebarElements = url.map((sidebarItem, i) => {
+    console.log(sidebarItem);
     return <li key={sidebarItem}>
       <SidebarItem
-        method={method[i]}
-        urlText={item}
+        u={sidebarItem}
+        m={method[i]}
       />
     </li>;
   });
@@ -23,10 +27,10 @@ const Sidebar = () => {
   );
 
   // const sidebarElements = url.map(((item, i) => (
-  //   <li key={item.method + item.urlText}>
+  //   <li key={item.method + item.url}>
   //     <SidebarItem 
   //       method={item.method}
-  //       urlText={item.urlText}
+  //       url={item.url}
   //     />
   //   </li>
   // ));

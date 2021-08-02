@@ -3,11 +3,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './fetcher.css';
 
-const Fetcher = ({ urlText, method, reqText, onChange, onSubmit }) => {
+const Fetcher = ({ url, method, body, onChange, onSubmit }) => {
   return <div className={styles.fetcher}>
     <form onSubmit={onSubmit}>
-      {/* <label htmlFor="urlText"></label> */}
-      <input data-testid="urlText" className={styles.searchInput} id="urlText" placeholder="URL" type="text" name="urlText" value={urlText} onChange={onChange}/>
+      {/* <label htmlFor="url"></label> */}
+      <input data-testid="url" className={styles.searchInput} id="url" placeholder="URL" type="text" name="url" value={url} onChange={onChange}/>
       <div className={styles.radioButtons}>
         <input type="radio" id="get" name="method" value="GET" method={method} onChange={onChange}/>
         <label htmlFor="get">GET</label>
@@ -31,16 +31,16 @@ const Fetcher = ({ urlText, method, reqText, onChange, onSubmit }) => {
     </form>
 
     <form>
-      {/* <label htmlFor="reqText"></label> */}
-      <textarea data-testid="reqText" id="reqText" placeholder="Raw JSON Body" type="text" name="reqText" value={reqText} onChange={onChange}/>
+      {/* <label htmlFor="body"></label> */}
+      <textarea data-testid="body" id="body" placeholder="Raw JSON Body" type="text" name="body" value={body} onChange={onChange}/>
     </form>
   </div>;
 };
 
 Fetcher.propTypes = {
-  urlText: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
   method:  PropTypes.string.isRequired,
-  reqText: PropTypes.any,
+  body: PropTypes.any,
   onChange: PropTypes.func,
   onSubmit: PropTypes.func
 };

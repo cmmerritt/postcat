@@ -2,16 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './sidebarItem.css';
 
-const SidebarItem = ({ method, urlText }) => (
+const SidebarItem = ({ u, m }) => (
   <section className={styles.sidebarItem}>
-    <h4>{method}</h4>
-    <span>{urlText}</span>
+    <h4>{m}</h4>
+    <span>{u}</span>
   </section>
 );
 
 SidebarItem.propTypes = {
-  method: PropTypes.string.isRequired, 
-  urlText: PropTypes.string.isRequired
+  u: PropTypes.string.isRequired,
+  m: PropTypes.string.isRequired
 };
 
 export default SidebarItem;
