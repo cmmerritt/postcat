@@ -13,7 +13,7 @@ export default class PostPersonContainer extends Component {
     urlText: '',
     reqText: '',
     method: '',
-    resBody: ''
+    response: ''
   }
 
   async componentDidMount() {
@@ -29,7 +29,7 @@ export default class PostPersonContainer extends Component {
     console.log(apiResponse);
 
     this.setState({ 
-      resBody: apiResponse, 
+      response: apiResponse, 
       method, 
       loading: false });
 
@@ -41,15 +41,14 @@ export default class PostPersonContainer extends Component {
   }
 
   render() {
-    const { urlText, reqText, method, resBody } = this.state;
-    console.log(resBody);
+    const { urlText, reqText, method, response } = this.state;
 
     return (
       <>
         <header><Header /></header>
         <section><Sidebar method={method} urlText={urlText}/></section>
         <section><Fetcher urlText={urlText} reqText={reqText} method={method} onChange={this.handleChange} onSubmit={this.handleSubmit}/></section>
-        <section><ResponseDisplay resBody={resBody}/></section>
+        <section><ResponseDisplay response={response}/></section>
       </>
     );
   }
