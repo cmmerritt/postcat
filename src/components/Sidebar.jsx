@@ -1,17 +1,24 @@
 import React from 'react';
 import SidebarItem from './SidebarItem';
 
-const Sidebar = (items) => {
-  const sidebarElements = items.map((item) => (
-    <li key={item.method + item.url}>
-      <SidebarItem 
-        method={item.method}
-        url={item.url}
-      />
-    </li>
-  ));
+const Sidebar = ({ history }) => {
+  console.log('hi');
+  const sidebarElements = history.map((h, i) => 
+  { console.log(h);
+    return (
+      <li key={i}>
+        <SidebarItem 
+          {...h}
+        />
+      </li>
+    );
+  });
 
-  return <ul>{sidebarElements}</ul>;
+  return (
+    <ul>
+      {sidebarElements}
+    </ul>
+  );
 };
 
 export default Sidebar;

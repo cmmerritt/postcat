@@ -1,0 +1,20 @@
+.bodySection {
+  display: flex;
+  justify-content: center;
+  align-items:flex-start;
+}
+
+.sidebar {
+  float: left;
+  width: 30%;
+  margin-right: 1em;
+}
+
+.mainBody {
+  float: right;
+  width: 70%;
+}
+
+.fetcher {
+  margin-bottom: 1em;
+}

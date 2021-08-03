@@ -1,11 +1,12 @@
 import React from 'react';
+import styles from './sidebarItem.css';
 
-const SidebarItem = () => {
-  return <>
-    <p>GET</p>
-    <p>https://futuramaapi.herokuapp.com/api/quotes</p>
-  </>;
-};
+const SidebarItem = ({ method, url, id }) => (
+  <section className={styles.sidebarItem} id={id}>
+    <h4 id={id}>{method}</h4>
+    <span id={id}>{url}</span>
+  </section>
+);
 
 export default SidebarItem;
 

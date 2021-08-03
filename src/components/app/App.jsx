@@ -1,8 +1,8 @@
 import React from 'react';
-import PostPersonContainer from '../../containers/PostPersonContainer';
+import PostCatContainer from '../../containers/PostCatContainer';
 
 export default function App() {
   return <>
-    <PostPersonContainer />
+    <PostCatContainer />
   </>;
 }
