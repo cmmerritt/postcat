@@ -1,12 +1,11 @@
 import React from 'react';
 import styles from './sidebarItem.css';
 
-const SidebarItem = ({ history }) => (
-  <section className={styles.sidebarItem}>
-    <h4>{history.method}</h4>
-    <span>{history.url}</span>
+const SidebarItem = ({ method, url, id }) => (
+  <section className={styles.sidebarItem} id={id}>
+    <h4 id={id}>{method}</h4>
+    <span id={id}>{url}</span>
   </section>
-  console.log(history);
 );
 
 export default SidebarItem;
