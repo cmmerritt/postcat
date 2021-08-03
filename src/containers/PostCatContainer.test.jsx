@@ -1,6 +1,7 @@
 import React from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
+import userEvent from '@testing-library/user-event';
 import PostCatContainer from './PostCatContainer';
 
 describe('PostCat Container', () => {
@@ -18,7 +19,17 @@ describe('PostCat Container', () => {
       });
     expect(userURL.value).toBe('https://rickandmortyapi.com/api/character');
 
-    // test getting radio button value
+    // test getting selected radio button value
+    const selectedButton = await screen.findByLabelText('GET');
+    userEvent.click(selectedButton);
+    fireEvent.change(selectedButton, 
+      {
+        target: 
+        {
+          value: 'GET'
+        }
+      });
+    expect(selectedButton).toBeChecked('GET');
 
     // test user entering request body text
 
