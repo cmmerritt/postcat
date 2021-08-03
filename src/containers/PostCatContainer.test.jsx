@@ -11,11 +11,8 @@ describe('PostCat Container', () => {
     // test getting URL user types in
     const userURL = await screen.findByPlaceholderText('URL');
     fireEvent.change(userURL,
-      { 
-        target:
-        {
-          value: 'https://rickandmortyapi.com/api/character'
-        }
+      { target:
+        { value: 'https://rickandmortyapi.com/api/character' }
       });
     expect(userURL.value).toBe('https://rickandmortyapi.com/api/character');
 
@@ -23,15 +20,19 @@ describe('PostCat Container', () => {
     const selectedButton = await screen.findByLabelText('GET');
     userEvent.click(selectedButton);
     fireEvent.change(selectedButton, 
-      {
-        target: 
-        {
-          value: 'GET'
-        }
+      { target: 
+        { value: 'GET' }
       });
     expect(selectedButton).toBeChecked('GET');
 
     // test user entering request body text
+
+    const body = await screen.findByPlaceholderText('Raw JSON Body');
+    fireEvent.change(body,
+      { target: 
+        { value: '{hi: all you cool cats and kittens}' }
+      });
+    expect(body.value).toBe('{hi: all you cool cats and kittens}');
 
     // test user clicking submit button
 
