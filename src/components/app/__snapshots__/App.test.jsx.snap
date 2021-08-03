@@ -23,6 +23,7 @@ exports[`App component renders App 1`] = `
     >
       <section
         class="sidebar"
+        data-testid="sidebar"
       >
         <section
           class="sidebarItem"

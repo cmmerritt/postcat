@@ -42,7 +42,8 @@ describe('PostCat Container', () => {
     expect(response).not.toBeEmptyDOMElement;
 
     // test history displaying on sidebar
-
+    const sidebar = await screen.findByTestId('sidebar');
+    expect(sidebar).not.toBeEmptyDOMElement();
   });
 });
 

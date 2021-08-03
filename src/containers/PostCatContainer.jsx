@@ -45,7 +45,7 @@ export default class PostCatContainer extends Component {
       <article id="postcatContainer">
         <header><Header /></header>
         <section className={styles.bodySection}>
-          <section className={styles.sidebar}><Sidebar /></section>
+          <section className={styles.sidebar} data-testid="sidebar"><Sidebar /></section>
           <section className={styles.mainBody}>
             <section className={styles.fetcher}><Fetcher url={url} body={body} method={method} onChange={this.handleChange} /></section>
             <section><ResponseDisplay response={response}/></section>
