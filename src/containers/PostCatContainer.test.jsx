@@ -36,6 +36,11 @@ describe('PostCat Container', () => {
 
     // test user clicking submit button
 
+    const button = await screen.findByRole('button');
+    const response = await screen.findByTestId('response');
+    userEvent.click(button);
+    expect(response).not.toBeEmptyDOMElement;
+
     // test history displaying on sidebar
 
   });

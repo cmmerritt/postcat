@@ -135,7 +135,9 @@ exports[`App component renders App 1`] = `
           </div>
         </section>
         <section>
-          <pre>
+          <pre
+            data-testid="response"
+          >
             <div
               class="react-json-view"
               style="font-family: monospace; cursor: default; background-color: rgba(0, 0, 0, 0); position: relative;"
