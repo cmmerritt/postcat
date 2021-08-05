@@ -23,7 +23,6 @@ exports[`App component renders App 1`] = `
     >
       <section
         class="sidebar"
-<<<<<<< HEAD
         data-testid="sidebar"
       >
         <section
@@ -32,10 +31,8 @@ exports[`App component renders App 1`] = `
           <h4 />
           <span />
         </section>
-=======
       >
         <ul />
->>>>>>> 8ce38d28bda61b3488d12be94c4b71f5b5c743a7
       </section>
       <section
         class="mainBody"
@@ -141,13 +138,10 @@ exports[`App component renders App 1`] = `
           </div>
         </section>
         <section>
-<<<<<<< HEAD
           <pre
             data-testid="response"
           >
-=======
           <pre>
->>>>>>> 8ce38d28bda61b3488d12be94c4b71f5b5c743a7
             <div
               class="react-json-view"
               style="font-family: monospace; cursor: default; background-color: rgba(0, 0, 0, 0); position: relative;"
@@ -308,11 +302,7 @@ exports[`App component renders App 1`] = `
                                 class="string-value"
                                 style="cursor: default;"
                               >
-<<<<<<< HEAD
-                                "I am bored. Please make a fetch!"
-=======
                                 "I am a bored cat. Please make a fetch!"
->>>>>>> 8ce38d28bda61b3488d12be94c4b71f5b5c743a7
                               </span>
                             </div>
                           </div>
