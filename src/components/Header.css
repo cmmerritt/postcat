@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'Caty';
-  src: url('../../public/assets/caty.ttf') format('ttf')
+  src: url ('/public/assets/caty.ttf') format('ttf')
 }
 
 header {
