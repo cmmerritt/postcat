@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 import React, { Component } from 'react';
 import Fetcher from '../components/Fetcher';
-import Header from '../components/Header';
+import Header from '../components/Header.jsx';
 import ResponseDisplay from '../components/ResponseDisplay';
 import Sidebar from '../components/Sidebar';
 import { fetchService } from '../services/fetchServices';

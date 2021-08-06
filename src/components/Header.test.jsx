@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, cleanup } from '@testing-library/react';
-import Header from './Header';
+import Header from './Header.jsx';
 
 describe('Header component', () => {
   afterEach(() => cleanup());
