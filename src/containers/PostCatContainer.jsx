@@ -18,9 +18,12 @@ export default class PostCatContainer extends Component {
   }
 
   componentDidMount() {
-    const storedHistory = JSON.parse(localStorage.getItem('HISTORY') || '[]');
+    const storedHistory = JSON.parse(localStorage.getItem('HISTORY'));
+    console.log(storedHistory, 'storedHistory');
     if(storedHistory) {
-      this.setState({ history:storedHistory });
+      this.setState({ history: storedHistory });
+    } else {
+      this.setState({ history: [] });
     }
   }
 
@@ -47,6 +50,7 @@ export default class PostCatContainer extends Component {
 
   render() {
     const { url, body, method, response, history } = this.state;
+    console.log(history, 'state');
     return (
       <article id="postcatContainer">
         <section><Header /></section>
