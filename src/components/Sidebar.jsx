@@ -1,5 +1,5 @@
 import React from 'react';
-import SidebarItem from './SidebarItem';
+import SidebarItem from './SidebarItem.jsx';
 
 const Sidebar = ({ history }) => {
   console.log('hi');

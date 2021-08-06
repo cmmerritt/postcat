@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, cleanup } from '@testing-library/react';
-import SidebarItem from './SidebarItem';
+import SidebarItem from './SidebarItem.jsx';
 
 describe('SidebarItem component', () => {
   afterEach(() => cleanup());

@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, cleanup } from '@testing-library/react';
-import Fetcher from './Fetcher';
+import Fetcher from './Fetcher.jsx';
 
 describe('Fetcher component', () => {
   afterEach(() => cleanup());

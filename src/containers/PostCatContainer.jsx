@@ -1,10 +1,10 @@
 /* eslint-disable max-len */
 import React, { Component } from 'react';
-import Fetcher from '../components/Fetcher';
+import Fetcher from '../components/Fetcher.jsx';
 import Header from '../components/Header.jsx';
-import ResponseDisplay from '../components/ResponseDisplay';
-import Sidebar from '../components/Sidebar';
-import { fetchService } from '../services/fetchServices';
+import ResponseDisplay from '../components/ResponseDisplay.jsx';
+import Sidebar from '../components/Sidebar.jsx';
+import { fetchService } from '../services/fetchServices.jsx';
 import styles from './postCatContainer.css';
 
 export default class PostCatContainer extends Component {

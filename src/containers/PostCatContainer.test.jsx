@@ -2,7 +2,7 @@ import React from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import userEvent from '@testing-library/user-event';
-import PostCatContainer from './PostCatContainer';
+import PostCatContainer from './PostCatContainer.jsx';
 
 describe('PostCat Container', () => {
   it('renders PostCat', async () => {
