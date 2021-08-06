@@ -2,14 +2,18 @@
 
 exports[`Header component renders Header 1`] = `
 <DocumentFragment>
-  <header>
+  <header
+    class="header"
+  >
     <img
+      class="img"
       src="../../public/assets/postcat.png"
     />
     <h1>
       Postcat
     </h1>
     <img
+      class="img"
       src="../../public/assets/postcat.png"
     />
   </header>

@@ -2,7 +2,7 @@ import React from 'react';
 import SidebarItem from './SidebarItem.jsx';
 
 const Sidebar = ({ history }) => {
-  console.log('hi');
+  console.log(history, 'sidebar history');
   const sidebarElements = history.map((h, i) => 
   { console.log(h);
     return (

@@ -2,6 +2,19 @@
 
 exports[`Sidebar component renders Sidebar 1`] = `
 <DocumentFragment>
-  <ul />
+  <ul>
+    <li>
+      <section
+        class="sidebarItem"
+      >
+        <h4>
+          GET
+        </h4>
+        <span>
+          https://rickandmortyapi.com/api/character
+        </span>
+      </section>
+    </li>
+  </ul>
 </DocumentFragment>
 `;

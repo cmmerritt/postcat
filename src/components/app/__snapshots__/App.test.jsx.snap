@@ -5,32 +5,29 @@ exports[`App component renders App 1`] = `
   <article
     id="postcatContainer"
   >
-    <header>
-      <header>
+    <section>
+      <header
+        class="header"
+      >
         <img
+          class="img"
           src="../../public/assets/postcat.png"
         />
         <h1>
           Postcat
         </h1>
         <img
+          class="img"
           src="../../public/assets/postcat.png"
         />
       </header>
-    </header>
+    </section>
     <section
       class="bodySection"
     >
       <section
         class="sidebar"
         data-testid="sidebar"
-      >
-        <section
-          class="sidebarItem"
-        >
-          <h4 />
-          <span />
-        </section>
       >
         <ul />
       </section>
@@ -141,7 +138,6 @@ exports[`App component renders App 1`] = `
           <pre
             data-testid="response"
           >
-          <pre>
             <div
               class="react-json-view"
               style="font-family: monospace; cursor: default; background-color: rgba(0, 0, 0, 0); position: relative;"
