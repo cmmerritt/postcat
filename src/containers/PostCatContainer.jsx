@@ -49,7 +49,7 @@ export default class PostCatContainer extends Component {
     const { url, body, method, response, history } = this.state;
     return (
       <article id="postcatContainer">
-        <header><Header /></header>
+        <section><Header /></section>
         <section className={styles.bodySection}>
           <section className={styles.sidebar} data-testid="sidebar">
             <Sidebar history={history} />
