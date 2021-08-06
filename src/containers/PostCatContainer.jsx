@@ -4,7 +4,7 @@ import Fetcher from '../components/Fetcher.jsx';
 import Header from '../components/Header.jsx';
 import ResponseDisplay from '../components/ResponseDisplay.jsx';
 import Sidebar from '../components/Sidebar.jsx';
-import { fetchService } from '../services/fetchServices.jsx';
+import { fetchService } from '../services/fetchServices.js';
 import styles from './postCatContainer.css';
 
 export default class PostCatContainer extends Component {
