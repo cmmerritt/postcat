@@ -5,7 +5,7 @@ import './responseDisplay.css';
 
 const ResponseDisplay = ({ response }) => {
   return (
-    <pre>
+    <pre data-testid="response">
       <ReactJson src={response} />
       {/* displayDataTypes={false} */}
     </pre>

@@ -1,18 +1,13 @@
-@font-face {
-  font-family: 'Caty';
-  src: url('../../public/assets/caty.ttf') format('ttf')
-}
-
-header {
+.header {
   background-color: wheat;
   color: black;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: Caty;
+  font-family: fantasy;
   font-size: larger;
 }
 
-img {
+.img {
   height: 100px;
 }

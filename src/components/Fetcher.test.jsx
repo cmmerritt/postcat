@@ -1,11 +1,11 @@
 import React from 'react';
 import { render, cleanup } from '@testing-library/react';
-import App from './App.jsx';
+import Fetcher from './Fetcher.jsx';
 
-describe('App component', () => {
+describe('Fetcher component', () => {
   afterEach(() => cleanup());
-  it('renders App', () => {
-    const { asFragment } = render(<App />);
+  it('renders Fetcher', () => {
+    const { asFragment } = render(<Fetcher />);
     expect(asFragment()).toMatchSnapshot();
   });
 });

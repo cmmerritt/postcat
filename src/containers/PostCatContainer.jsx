@@ -1,11 +1,10 @@
 /* eslint-disable max-len */
 import React, { Component } from 'react';
-import Fetcher from '../components/Fetcher';
-import Header from '../components/Header';
-import ResponseDisplay from '../components/ResponseDisplay';
-import Sidebar from '../components/Sidebar';
-import { fetchService } from '../services/fetchServices';
-import { setMethod, setUrl } from '../services/utils';
+import Fetcher from '../components/Fetcher.jsx';
+import Header from '../components/Header.jsx';
+import ResponseDisplay from '../components/ResponseDisplay.jsx';
+import Sidebar from '../components/Sidebar.jsx';
+import { fetchService } from '../services/fetchServices.js';
 import styles from './postCatContainer.css';
 
 export default class PostCatContainer extends Component {
@@ -19,10 +18,12 @@ export default class PostCatContainer extends Component {
   }
 
   componentDidMount() {
-    const storedHistory = JSON.parse(localStorage.getItem('HISTORY') || '[]');
-    console.log(storedHistory);
+    const storedHistory = JSON.parse(localStorage.getItem('HISTORY'));
+    console.log(storedHistory, 'storedHistory');
     if(storedHistory) {
-      this.setState({ history:storedHistory });
+      this.setState({ history: storedHistory });
+    } else {
+      this.setState({ history: [] });
     }
   }
 
@@ -30,7 +31,7 @@ export default class PostCatContainer extends Component {
     e.preventDefault();
     // const localStorage = window.localStorage;
     // console.log(localStorage);
-    const { url, method, body, history } = this.state;
+    const { url, method, body } = this.state;
     const apiResponse = await fetchService(url, method, body);
     const localHistory = JSON.parse(localStorage.getItem('HISTORY') || '[]');
     localStorage.setItem('HISTORY', JSON.stringify([...localHistory, { method, url }]));
@@ -49,12 +50,12 @@ export default class PostCatContainer extends Component {
 
   render() {
     const { url, body, method, response, history } = this.state;
-    console.log(history);
+    console.log(history, 'state');
     return (
       <article id="postcatContainer">
-        <header><Header /></header>
+        <section><Header /></section>
         <section className={styles.bodySection}>
-          <section className={styles.sidebar}>
+          <section className={styles.sidebar} data-testid="sidebar">
             <Sidebar history={history} />
           </section>
           <section className={styles.mainBody}>
