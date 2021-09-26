@@ -1,5 +1,5 @@
 # postcat
 
-Postman clone
+A Postman clone, but make it a cat. Postcat!
 
 https://jsonplaceholder.typicode.com/
